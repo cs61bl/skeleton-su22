@@ -1,5 +1,7 @@
 package game2048;
 
+import java.awt.event.KeyEvent;
+
 import static game2048.Side.*;
 
 /** The input/output and GUI controller for play of a game of 2048.
@@ -41,7 +43,7 @@ public class Game {
                         return;
                     case "New Game":
                         return;
-                    case "Up": case "Down": case "Left": case "Right":
+                    case KeyEvent.VK_UP + "": case KeyEvent.VK_DOWN + "": case KeyEvent.VK_LEFT + "": case KeyEvent.VK_RIGHT+ "":
                     case "\u2190": case "\u2191": case "\u2192": case "\u2193":
                         if (!_model.gameOver() && _model.tilt(keyToSide(cmnd))) {
                             _model.notifyObservers(cmnd);
@@ -60,10 +62,10 @@ public class Game {
      *  or "Right"). */
     private Side keyToSide(String key) {
         return switch (key) {
-            case "Up", "\u2191" -> NORTH;
-            case "Down", "\u2193" -> SOUTH;
-            case "Left", "\u2190" -> WEST;
-            case "Right", "\u2192" -> EAST;
+            case KeyEvent.VK_UP + "", "\u2191" -> NORTH;
+            case KeyEvent.VK_DOWN + "", "\u2193" -> SOUTH;
+            case KeyEvent.VK_LEFT + "", "\u2190" -> WEST;
+            case KeyEvent.VK_RIGHT+ "", "\u2192" -> EAST;
             default -> throw new IllegalArgumentException("unknown key designation");
         };
     }
