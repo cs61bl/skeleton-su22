@@ -70,6 +70,9 @@ public class SLList {
             l1 = l1.next;
             l2 = l2.next;
         }
+	if (l1 != sentinel || l2 != slList.sentinel) {
+		return false;
+	}
         return true;
     }
 
