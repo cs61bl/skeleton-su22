@@ -121,9 +121,11 @@ public class CapersTest {
     }
 
     @BeforeClass
+    @SuppressWarnings("removal")
     public static void setup04_trapSystemExit() {
         // https://openjdk.java.net/jeps/411
         // https://bugs.openjdk.java.net/browse/JDK-8199704
+        // TODO: this is deprecated. See issues above.
         System.setSecurityManager(new SecurityManager() {
             @Override
             public void checkExit(int status) {
@@ -144,9 +146,11 @@ public class CapersTest {
     }
 
     @AfterClass
+    @SuppressWarnings("removal")
     public static void restoreSecurity() {
         // JUnit uses system.exit(0) internally somewhere, so hand control back
         // to the JVM before we leave the test class
+        // TODO: this is deprecated. See the other call for relevant issue.
         System.setSecurityManager(null);
     }
 
@@ -240,11 +244,10 @@ public class CapersTest {
             capers.Main.main(args);
         } catch (SecurityException ignored) {
         } catch (Exception e) {
-            // Wrap IOException for poor implementations - can't directly catch
-            // it because it's checked and the compiler complains
-            if (!(e instanceof IOException)) {
-                throw new RuntimeException(e);
-            }
+            // Wrap IOException and other checked for poor implementations;
+            // can't directly catch it because it's checked and the compiler complains
+            // that it's not thrown
+            throw new RuntimeException(e);
         }
         checkOutput(expectedOutput);
     }
