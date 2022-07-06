@@ -1,0 +1,12 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="true" type="JUnit" factoryName="JUnit">
+    <option name="MAIN_CLASS_NAME" value="" />
+    <option name="METHOD_NAME" value="" />
+    <option name="TEST_OBJECT" value="class" />
+    <option name="VM_PARAMETERS" value="-ea -Djava.security.manager=allow" />
+    <option name="WORKING_DIRECTORY" value="$ProjectFileDir$/testing" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
