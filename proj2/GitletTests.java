@@ -703,6 +703,7 @@ public class GitletTests {
     @Test
     public void test22_removeDeletedFile() {
         i_setup2();
+        deleteFile("f.txt");
         gitletCommand(new String[]{"rm", "f.txt"}, "");
         gitletCommand(new String[]{"status"}, """
                 === Branches ===
