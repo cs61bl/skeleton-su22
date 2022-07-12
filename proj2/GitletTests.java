@@ -387,6 +387,10 @@ public class GitletTests {
      */
     public static void runGitletCommand(String[] args) {
         try {
+            // Catch string ==
+            for (int i = 0; i < args.length; i ++) {
+                args[i] = new String(args[i]);
+            }
             OG_OUT.println(COMMAND_BASE + createCommand(args));
             gitlet.Main.main(args);
         } catch (SecurityException ignored) {
