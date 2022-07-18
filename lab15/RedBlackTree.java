@@ -32,13 +32,13 @@ public class RedBlackTree<T extends Comparable<T>> {
         root = null;
     }
 
-    /* Creates a RedBlackTree from a given BTree (2-3-4) TREE. */
+    /* Creates a RedBlackTree from a given 2-3 TREE. */
     public RedBlackTree(TwoThreeTree<T> tree) {
         Node<T> ttTreeRoot = tree.root;
         root = buildRedBlackTree(ttTreeRoot);
     }
 
-    /* Builds a RedBlackTree that has isometry with given 2-3-4 tree rooted at
+    /* Builds a RedBlackTree that has isometry with given 2-3 tree rooted at
        given node R, and returns the root node. */
     RBTreeNode<T> buildRedBlackTree(Node<T> r) {
         if (r == null) {
