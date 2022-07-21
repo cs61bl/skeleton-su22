@@ -948,13 +948,13 @@ public class GitletTests {
         assertFileDoesNotExist("g.txt");
         writeFile(NOTWUG, "f.txt");
         gitletCommand(new String[]{"commit", "Alternative file"}, "");
-        assertFileEquals(WUG, "f.txt");
+        assertFileEquals(NOTWUG, "f.txt");
         assertFileDoesNotExist("g.txt");
         gitletCommand(new String[]{"checkout", "main"}, "");
         assertFileEquals(WUG, "f.txt");
         assertFileEquals(NOTWUG, "g.txt");
         gitletCommand(new String[]{"checkout", "other"}, "");
-        assertFileEquals(WUG, "f.txt");
+        assertFileEquals(NOTWUG, "f.txt");
         assertFileDoesNotExist("g.txt");
     }
 
