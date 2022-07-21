@@ -947,6 +947,7 @@ public class GitletTests {
         assertFileDoesNotExist("f.txt");
         assertFileDoesNotExist("g.txt");
         writeFile(NOTWUG, "f.txt");
+        gitletCommand(new String[]{"add", "f.txt"}, "");
         gitletCommand(new String[]{"commit", "Alternative file"}, "");
         assertFileEquals(NOTWUG, "f.txt");
         assertFileDoesNotExist("g.txt");
@@ -960,6 +961,7 @@ public class GitletTests {
 
     @Test
     public void test30a_rmBranch() {
+        i_prelude1();
         gitletCommand(new String[]{"branch", "other"}, "");
         writeFile(WUG, "f.txt");
         gitletCommand(new String[]{"add", "f.txt"}, "");
