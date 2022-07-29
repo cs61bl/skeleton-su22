@@ -17,10 +17,10 @@ public class GraphTest {
         g.addEdge(3, 4, 60);
         g.addEdge(3, 2, 20);
 
-        ArrayList<Integer> path0 = g.shortestPath(0, 1);
-        ArrayList<Integer> path1 = g.shortestPath(0, 2);
-        ArrayList<Integer> path2 = g.shortestPath(0, 3);
-        ArrayList<Integer> path3 = g.shortestPath(0, 4);
+        List<Integer> path0 = g.shortestPath(0, 1);
+        List<Integer> path1 = g.shortestPath(0, 2);
+        List<Integer> path2 = g.shortestPath(0, 3);
+        List<Integer> path3 = g.shortestPath(0, 4);
 
         List<Integer> expected0 = Arrays.asList(0, 1);
         List<Integer> expected1 = Arrays.asList(0, 3, 2);
@@ -47,8 +47,8 @@ public class GraphTest {
         g.addEdge(4, 2, 9);
         g.addEdge(4, 3, 2);
 
-        ArrayList<Integer> path0 = g.shortestPath(0, 2);
-        ArrayList<Integer> path1 = g.shortestPath(0, 1);
+        List<Integer> path0 = g.shortestPath(0, 2);
+        List<Integer> path1 = g.shortestPath(0, 1);
 
         List<Integer> expected0 = Arrays.asList(0, 4, 1, 2);
         List<Integer> expected1 = Arrays.asList(0, 4, 1);
@@ -76,12 +76,12 @@ public class GraphTest {
         g.addUndirectedEdge(5, 7, 0);
         g.addUndirectedEdge(6, 7, 2);
 
-        ArrayList<Integer> path0 = g.shortestPath(0, 1);
-        ArrayList<Integer> path1 = g.shortestPath(0, 2);
-        ArrayList<Integer> path2 = g.shortestPath(0, 3);
-        ArrayList<Integer> path3 = g.shortestPath(0, 4);
-        ArrayList<Integer> path4 = g.shortestPath(0, 5);
-        ArrayList<Integer> path5 = g.shortestPath(0, 6);
+        List<Integer> path0 = g.shortestPath(0, 1);
+        List<Integer> path1 = g.shortestPath(0, 2);
+        List<Integer> path2 = g.shortestPath(0, 3);
+        List<Integer> path3 = g.shortestPath(0, 4);
+        List<Integer> path4 = g.shortestPath(0, 5);
+        List<Integer> path5 = g.shortestPath(0, 6);
 
         List<Integer> expected0 = Arrays.asList(0, 1);
         List<Integer> expected1 = Arrays.asList(0, 4, 3, 2);
@@ -111,10 +111,10 @@ public class GraphTest {
         g.addUndirectedEdge(3, 4, 6);
         g.addUndirectedEdge(4, 5, 9);
 
-        ArrayList<Integer> path0 = g.shortestPath(0, 5);
-        ArrayList<Integer> path1 = g.shortestPath(0, 2);
-        ArrayList<Integer> path2 = g.shortestPath(0, 3);
-        ArrayList<Integer> path3 = g.shortestPath(4, 0);
+        List<Integer> path0 = g.shortestPath(0, 5);
+        List<Integer> path1 = g.shortestPath(0, 2);
+        List<Integer> path2 = g.shortestPath(0, 3);
+        List<Integer> path3 = g.shortestPath(4, 0);
 
         List<Integer> expected0 = Arrays.asList(0, 2, 5);
         List<Integer> expected1 = Arrays.asList(0, 2);
