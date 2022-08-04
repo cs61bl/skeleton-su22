@@ -60,7 +60,7 @@ public class DistributionSorts {
     private static void runLSDRadixSort(int len) {
         int[] arr2 = new int[len];
         for (int i = 0; i < arr2.length; i++) {
-            arr2[i] = randomDigit();
+            arr2[i] = randomInt();
         }
         System.out.println("Original array: " + Arrays.toString(arr2));
         lsdRadixSort(arr2);
